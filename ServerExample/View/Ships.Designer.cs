@@ -50,9 +50,11 @@
             this.serverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serverBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.modifyOldShipNameTextInput = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.modifyShipButton = new System.Windows.Forms.Button();
-            this.modifyShipOwnerTextInput = new System.Windows.Forms.TextBox();
-            this.modifyShipNameTextInput = new System.Windows.Forms.TextBox();
+            this.modifyNewShipOwnerTextInput = new System.Windows.Forms.TextBox();
+            this.modifyNewShipNameTextInput = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -68,7 +70,7 @@
             this.shipList.FormattingEnabled = true;
             this.shipList.Location = new System.Drawing.Point(12, 33);
             this.shipList.Name = "shipList";
-            this.shipList.Size = new System.Drawing.Size(776, 290);
+            this.shipList.Size = new System.Drawing.Size(776, 277);
             this.shipList.TabIndex = 0;
             this.shipList.SelectedIndexChanged += new System.EventHandler(this.shipList_SelectedIndexChanged);
             // 
@@ -79,16 +81,16 @@
             this.groupBox1.Controls.Add(this.shipNameTextInput);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(543, 329);
+            this.groupBox1.Location = new System.Drawing.Point(543, 316);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 119);
+            this.groupBox1.Size = new System.Drawing.Size(245, 132);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Ship";
             // 
             // addShipButton
             // 
-            this.addShipButton.Location = new System.Drawing.Point(170, 93);
+            this.addShipButton.Location = new System.Drawing.Point(57, 93);
             this.addShipButton.Name = "addShipButton";
             this.addShipButton.Size = new System.Drawing.Size(75, 23);
             this.addShipButton.TabIndex = 4;
@@ -98,14 +100,14 @@
             // 
             // shipOwnerTextInput
             // 
-            this.shipOwnerTextInput.Location = new System.Drawing.Point(57, 49);
+            this.shipOwnerTextInput.Location = new System.Drawing.Point(57, 45);
             this.shipOwnerTextInput.Name = "shipOwnerTextInput";
             this.shipOwnerTextInput.Size = new System.Drawing.Size(182, 20);
             this.shipOwnerTextInput.TabIndex = 3;
             // 
             // shipNameTextInput
             // 
-            this.shipNameTextInput.Location = new System.Drawing.Point(57, 23);
+            this.shipNameTextInput.Location = new System.Drawing.Point(57, 16);
             this.shipNameTextInput.Name = "shipNameTextInput";
             this.shipNameTextInput.Size = new System.Drawing.Size(182, 20);
             this.shipNameTextInput.TabIndex = 2;
@@ -113,7 +115,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 52);
+            this.label2.Location = new System.Drawing.Point(13, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 1;
@@ -122,7 +124,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 23);
+            this.label1.Location = new System.Drawing.Point(16, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -144,9 +146,9 @@
             this.groupBox2.Controls.Add(this.removeShipButton);
             this.groupBox2.Controls.Add(this.removeShipTextInput);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 329);
+            this.groupBox2.Location = new System.Drawing.Point(12, 316);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(262, 119);
+            this.groupBox2.Size = new System.Drawing.Size(238, 132);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Remove Ship";
@@ -208,7 +210,7 @@
             // 
             // removeShipButton
             // 
-            this.removeShipButton.Location = new System.Drawing.Point(6, 90);
+            this.removeShipButton.Location = new System.Drawing.Point(40, 96);
             this.removeShipButton.Name = "removeShipButton";
             this.removeShipButton.Size = new System.Drawing.Size(106, 23);
             this.removeShipButton.TabIndex = 4;
@@ -218,15 +220,15 @@
             // 
             // removeShipTextInput
             // 
-            this.removeShipTextInput.Location = new System.Drawing.Point(40, 19);
+            this.removeShipTextInput.Location = new System.Drawing.Point(40, 16);
             this.removeShipTextInput.Name = "removeShipTextInput";
-            this.removeShipTextInput.Size = new System.Drawing.Size(205, 20);
+            this.removeShipTextInput.Size = new System.Drawing.Size(188, 20);
             this.removeShipTextInput.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 19);
+            this.label4.Location = new System.Drawing.Point(4, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 0;
@@ -242,21 +244,39 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.modifyOldShipNameTextInput);
+            this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.modifyShipButton);
-            this.groupBox4.Controls.Add(this.modifyShipOwnerTextInput);
-            this.groupBox4.Controls.Add(this.modifyShipNameTextInput);
+            this.groupBox4.Controls.Add(this.modifyNewShipOwnerTextInput);
+            this.groupBox4.Controls.Add(this.modifyNewShipNameTextInput);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Location = new System.Drawing.Point(280, 329);
+            this.groupBox4.Location = new System.Drawing.Point(256, 316);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(257, 119);
+            this.groupBox4.Size = new System.Drawing.Size(281, 132);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Modify Ship";
             // 
+            // modifyOldShipNameTextInput
+            // 
+            this.modifyOldShipNameTextInput.Location = new System.Drawing.Point(77, 16);
+            this.modifyOldShipNameTextInput.Name = "modifyOldShipNameTextInput";
+            this.modifyOldShipNameTextInput.Size = new System.Drawing.Size(198, 20);
+            this.modifyOldShipNameTextInput.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Old Name";
+            // 
             // modifyShipButton
             // 
-            this.modifyShipButton.Location = new System.Drawing.Point(170, 93);
+            this.modifyShipButton.Location = new System.Drawing.Point(77, 96);
             this.modifyShipButton.Name = "modifyShipButton";
             this.modifyShipButton.Size = new System.Drawing.Size(75, 23);
             this.modifyShipButton.TabIndex = 4;
@@ -264,37 +284,37 @@
             this.modifyShipButton.UseVisualStyleBackColor = true;
             this.modifyShipButton.Click += new System.EventHandler(this.modifyShipButton_Click);
             // 
-            // modifyShipOwnerTextInput
+            // modifyNewShipOwnerTextInput
             // 
-            this.modifyShipOwnerTextInput.Location = new System.Drawing.Point(57, 49);
-            this.modifyShipOwnerTextInput.Name = "modifyShipOwnerTextInput";
-            this.modifyShipOwnerTextInput.Size = new System.Drawing.Size(188, 20);
-            this.modifyShipOwnerTextInput.TabIndex = 3;
+            this.modifyNewShipOwnerTextInput.Location = new System.Drawing.Point(77, 68);
+            this.modifyNewShipOwnerTextInput.Name = "modifyNewShipOwnerTextInput";
+            this.modifyNewShipOwnerTextInput.Size = new System.Drawing.Size(198, 20);
+            this.modifyNewShipOwnerTextInput.TabIndex = 3;
             // 
-            // modifyShipNameTextInput
+            // modifyNewShipNameTextInput
             // 
-            this.modifyShipNameTextInput.Location = new System.Drawing.Point(57, 23);
-            this.modifyShipNameTextInput.Name = "modifyShipNameTextInput";
-            this.modifyShipNameTextInput.Size = new System.Drawing.Size(188, 20);
-            this.modifyShipNameTextInput.TabIndex = 2;
+            this.modifyNewShipNameTextInput.Location = new System.Drawing.Point(77, 42);
+            this.modifyNewShipNameTextInput.Name = "modifyNewShipNameTextInput";
+            this.modifyNewShipNameTextInput.Size = new System.Drawing.Size(198, 20);
+            this.modifyNewShipNameTextInput.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 52);
+            this.label6.Location = new System.Drawing.Point(6, 71);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Owner";
+            this.label6.Text = "New Owner";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 23);
+            this.label7.Location = new System.Drawing.Point(6, 45);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(60, 13);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Name";
+            this.label7.Text = "New Name";
             // 
             // Ships
             // 
@@ -345,10 +365,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button modifyShipButton;
-        private System.Windows.Forms.TextBox modifyShipOwnerTextInput;
-        private System.Windows.Forms.TextBox modifyShipNameTextInput;
+        private System.Windows.Forms.TextBox modifyNewShipOwnerTextInput;
+        private System.Windows.Forms.TextBox modifyNewShipNameTextInput;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox modifyOldShipNameTextInput;
+        private System.Windows.Forms.Label label8;
     }
 }
 

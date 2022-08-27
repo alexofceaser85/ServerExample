@@ -54,14 +54,14 @@ namespace ServerExample
         private void shipList_SelectedIndexChanged(object sender, EventArgs e)
         {
             removeShipTextInput.Text = shipController.GetShips()[shipList.SelectedIndex].name;
-            modifyShipNameTextInput.Text = shipController.GetShips()[shipList.SelectedIndex].name;
-            modifyShipOwnerTextInput.Text = shipController.GetShips()[shipList.SelectedIndex].owner;
+            modifyOldShipNameTextInput.Text = shipController.GetShips()[shipList.SelectedIndex].name;
+            modifyNewShipNameTextInput.Text = shipController.GetShips()[shipList.SelectedIndex].name;
+            modifyNewShipOwnerTextInput.Text = shipController.GetShips()[shipList.SelectedIndex].owner;
         }
 
         private void modifyShipButton_Click(object sender, EventArgs e)
         {
-            string oldName = shipController.GetShips()[shipList.SelectedIndex].name;
-            this.shipController.UpdateShip(modifyShipNameTextInput.Text, oldName, modifyShipOwnerTextInput.Text);
+            this.shipController.UpdateShip(modifyNewShipNameTextInput.Text, modifyOldShipNameTextInput.Text, modifyNewShipOwnerTextInput.Text);
         }
     }
 }
