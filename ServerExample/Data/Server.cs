@@ -15,7 +15,7 @@ namespace ServerExample.Data
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "select * from ship";
+                string query = "select * from Ship";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
@@ -37,6 +37,48 @@ namespace ServerExample.Data
             }
 
             return ships;
+        }
+
+        public static void AddShip(string name, string owner)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = $"insert into Ship(name, owner) values ('{name}', '{owner}')";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void RemoveShip(string name)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = $"delete from Ship where name='{name}'";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void UpdateShip(string newName, string oldName, string newOwner)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = $"update Ship set name='{newName}', owner='{newOwner}' where name='{oldName}'";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
